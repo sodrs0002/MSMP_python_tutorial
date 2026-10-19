@@ -54,7 +54,7 @@ vypočtený kompresní poměr (zaokrouhlený na 1 desetinné místo) a
 střední pístovou rychlost (zaokrouhlenou na 2 desetinná místa) z Úkolu 2.
 """
 # Sem napište kód pro Úkol 3:
-
+print (f"Kompresní poměr je {epsilon:.1f} a střední pístová rychlost je {c_s:.2f} m/s.")
 
 
 
@@ -86,15 +86,32 @@ beta = 1.4        # Stupeň předběžné expanze (v4 / v3)
 # ZDE ZAČNĚTE POČÍTAT:
 
 # Bod 1:
+v1 = r * T1 / p1
+print(f"BOD 1: v1 = {v1:.6f} m3, p1 = {p1:.2f} Pa, T1 = {T1:.2f} K")
 
 
 # Bod 2:
+v2 = v1/epsilon
+p2 = p1 * epsilon ** kappa
+T2 = T1 * epsilon ** (kappa - 1)
+print(f"BOD 2: v2 = {v2:.6f} m3, p2 = {p2:.2f} Pa, T2 = {T2:.2f} K")
 
 
 # Bod 3:
-
+v3 = v2
+p3 = p2 * alpha
+T3 = T2 * alpha
+print(f"BOD 3: v3 = {v3:.6f} m3, p3 = {p3:.2f} Pa, T3 = {T3:.2f} K")
 
 # Bod 4:
+v4 = v3 * beta
+p4 = p3
+T4 = T3 * beta
+print(f"BOD 4: v4 = {v4:.6f} m3, p4 = {p4:.2f} Pa, T4 = {T4:.2f} K")
 
 
 # Bod 5:
+v5 = v1
+p5 = p4 * (v4 / v5) ** kappa
+T5 = T4 * (v4 / v5) ** (kappa - 1)
+print(f"BOD 5: v5 = {v5:.6f} m3, p5 = {p5:.2f} Pa, T5 = {T5:.2f} K")

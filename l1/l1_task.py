@@ -14,10 +14,12 @@ Nadefinujte proměnné pro moderní tříválcový motor 1.0 TSI.
    je celočíselný typ (int) a vrtání je desetinné číslo (float).
 """
 # Sem napište kód pro Úkol 1:
-
-
-
-
+a = "1.0 TSI"
+b = 3
+vrtani = 74.5
+zdvih = 76.4
+print (type(b))
+print (type(vrtani))
 
 """
 ÚKOL 2: Matematika a vzorce
@@ -29,10 +31,18 @@ Máme zadaný kompresní objem jednoho válce V_c = 0.000045 m3.
 3. Vypočítejte střední pístovou rychlost c_s [m/s] při otáčkách n = 4000 min-1.
    Vzorec: c_s = 2 * z * (n / 60), kde z je zdvih v metrech.
 """
+# Sem napište kód pro Úkol 2:
+import math
 V_c = 0.000045
 n_otacky = 4000
-# Sem napište kód pro Úkol 2:
-
+vrtani_m = vrtani / 1000
+zdvih_m = zdvih / 1000
+objem_vrtani = math.pi * (vrtani_m / 2) ** 2 * zdvih_m
+epsilon = (objem_vrtani + V_c) / V_c
+c_s = 2 * zdvih_m * (n_otacky / 60)
+print (objem_vrtani)
+print (epsilon)
+print (c_s)
 
 
 
